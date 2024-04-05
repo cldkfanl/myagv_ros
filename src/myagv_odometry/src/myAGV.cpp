@@ -247,7 +247,7 @@ void MyAGV::writeSpeed(double movex, double movey, double rot)
 {
     if (movex == 10 && movey == 10 && rot == 10)
     {
-        char buf[7] = {0xfe, 0xfe ,0x01 ,0x01 ,0x01 ,0x03};
+        unsigned char buf[7] = {0xfe, 0xfe ,0x01 ,0x01 ,0x01 ,0x03};
         boost::asio::write(sp, boost::asio::buffer(buf));
         unsigned char buf_header[1] = {0};
 
